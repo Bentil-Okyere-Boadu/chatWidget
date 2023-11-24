@@ -20,7 +20,7 @@ const LandingPage = ({ nextPage }: LandingPageProps) => {
             </Heading>
           </motion.div>
         </div>
-        <div className="flex flex-wrap justify-center gap-4 mb-5">
+        <div className="flex flex-col justify-center gap-4 mb-5">
           {data.features.map((feature, index) => {
             return (
               <Feature
