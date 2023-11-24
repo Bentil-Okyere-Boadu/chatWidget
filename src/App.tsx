@@ -1,12 +1,16 @@
 import { ChakraProvider } from '@chakra-ui/react'
-import Widget from './components/Widget'
+import MainWidget from './components/Widget/MainWidget'
 import FloatingButton from './components/FloatingButton'
 import { motion, useAnimation } from 'framer-motion';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
   const controls = useAnimation();
   const [btnOn, setBtnOn] = useState<boolean>(true);
+
+  useEffect(() => {
+    controls.start({ opacity: 1}); 
+  }, [controls])
 
   const showWidget = () => {
     controls.start({ opacity: 1}); 
@@ -25,12 +29,12 @@ function App() {
       </div>
       <div className="z-100">
         <motion.div
-          initial={{opacity: 0, height: 0}}
+          initial={{opacity: 0}}
           animate={controls}
-          transition={{ type: 'easeIn', duration: 0.5, delayChildren: 2}}
+          transition={{ type: 'easeIn', duration: 0.5}}
           exit={{ height: 0, opacity: 0 }}
         >
-          <Widget/>
+          <MainWidget/>
         </motion.div>
         <FloatingButton showWidget={showWidget} closeWidget={closeWidget} switchBtn={btnOn}/>
       </div>

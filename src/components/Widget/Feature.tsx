@@ -11,7 +11,7 @@ const Feature = ({ text, icon, index }: FeatureProps) => {
   return (
     <div className="w-[45%]">
       <motion.div
-        variants={fadeIn("top", "tween", 0.4 * index, 0.75)}
+        variants={fadeIn("top", "tween", 0.5 * index, 0.75)}
         whileHover={{scale: 1.05}}
         className="flex justify-center items-center rounded-md flex-col shadow-md bg-white p-4 h-34 text-center"
       >
