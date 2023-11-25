@@ -12,10 +12,9 @@ const ChatPage = () => {
   const sendMessage = () => {};
 
   return (
-    <div className="bg-slate-100">
+    <div className="bg-slate-100 min-h-[40rem] flex justify-between flex-col rounded-b-lg">
       <ScrollableChat />
-      <FormControl onKeyDown={sendMessage}>
-        {/* {isTyping ? <div> typing... </div> : <></>} */}
+      <FormControl onKeyDown={sendMessage} padding={'1.2rem'}>
         <Input
           variant="filled"
           bg="#E0E0E0"

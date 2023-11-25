@@ -17,7 +17,7 @@ const Header = ({ previousPage, page }: HeaderProps) => {
             <ChevronLeftIcon fontSize="large" />
           </button>
         )}
-        <Avatar />
+        <Avatar name="AIZee"/>
         <p className="text-white font-bold text-lg">AIZee</p>
       </div>
       <button onClick={previousPage} className="text-white">
