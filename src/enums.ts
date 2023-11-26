@@ -1,6 +1,7 @@
 enum Pages {
     landingPage = 'landing',
-    chatPage = 'chat'
+    chatPage = 'chat',
+    emailPage = 'email'
 }
 
 export default Pages
