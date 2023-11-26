@@ -3,11 +3,12 @@ import { createContext, useState, ReactNode } from "react";
 
 //Define the type for the context value
 interface MyContextProps {
-    data: string;
-    setData: React.Dispatch<React.SetStateAction<string>>;
     btn: boolean;
+    ref: React.RefObject<HTMLDivElement> | null;
     setBtn: React.Dispatch<React.SetStateAction<boolean>>;
+    setRef: React.Dispatch<React.SetStateAction<React.RefObject<HTMLDivElement> | null>>;
     switchWidget: () => void;
+    handleCloseWidget: () => void;
   }
   
   // Create a context with the specified type
@@ -20,19 +21,32 @@ interface MyContextProps {
   
   // Create a provider component with TypeScript
   const MyContextProvider: React.FC<MyContextProviderProps> = ({ children }) => {
-    const [myData, setMyData] = useState<string>("Hello from Context!");
     const [btn, setBtn] = useState<boolean>(true);
+    const [ref, setRef] = useState<React.RefObject<HTMLDivElement> | null>(null);
 
     const switchWidget = () => {
-      setBtn(!btn)
+      setBtn((btn) => !btn)
     }
+
+    const handleCloseWidget = () => {
+      // Access the current property of the ref to get the div element
+      
+      if (ref) {
+        const myDiv = ref.current;
+        // Toggle the CSS class using classList
+        myDiv?.classList.toggle('main');
+        }
+
+      switchWidget();
+    };
   
     const contextValue: MyContextProps = {
-      data: myData,
-      setData: setMyData,
       btn: btn,
       setBtn: setBtn,
-      switchWidget: switchWidget
+      switchWidget: switchWidget,
+      handleCloseWidget: handleCloseWidget,
+      ref: ref,
+      setRef: setRef
     };
   
     return (

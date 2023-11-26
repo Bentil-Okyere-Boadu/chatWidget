@@ -1,10 +1,8 @@
 import Header from "./Header";
 import LandingPage from "./LandingPage";
-// import SectionWrapper from "../../hoc/SectionWrapper";
 import ChatPage from "./ChatPage";
 import { useState } from "react";
 import Pages from "../../enums";
-import './widget.css'
 
 
 const MainWidget = () => {
@@ -19,7 +17,7 @@ const MainWidget = () => {
   }
   
   return (
-    <div className="w-[25rem] bg-gray-200 fixed bottom-[10%] right-[3%] rounded-xl bg-opacity-25">
+    <div className="w-full bg-gray-200 rounded-xl bg-opacity-25">
           <Header previousPage={moveToLandingPage} page={page}/>
          { page === Pages.landingPage && <LandingPage nextPage={moveToChatPage}/>}
          { page === Pages.chatPage && <ChatPage />}

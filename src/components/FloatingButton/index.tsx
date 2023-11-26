@@ -5,13 +5,13 @@ import { MyContext } from "../../MyContext";
 
 
 const Index = () => {
-  const { switchWidget, btn } = useContext(MyContext)!;
+  const { switchWidget, btn, handleCloseWidget } = useContext(MyContext)!;
   
   return (
     <div style={{ bottom: "3%", right: "3%", position: "fixed", zIndex: "10" }}>
       <button
         className="rounded-full p-2 bg-[#9D0001] text-white font-semibold text-lg"
-        onClick={switchWidget}
+        onClick={handleCloseWidget}
         hidden={btn}
       >
         <Close fontSize="large" />

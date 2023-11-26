@@ -1,6 +1,5 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import FloatingButton from "./components/FloatingButton";
-import "./App.css";
 import { MyContextProvider } from "./MyContext";
 import ShadowWidget from "./components/ShadowWidget";
 
