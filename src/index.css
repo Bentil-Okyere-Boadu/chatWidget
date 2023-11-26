@@ -16,8 +16,9 @@ code {
     monospace;
 }
 
-.main {
-  animation: mainExit 1.5s ease 0s 1 normal forwards;}
+.exit {
+  animation: mainExit 2s ease 0s 1 normal forwards;
+}
 
 
 .mainWidget {
