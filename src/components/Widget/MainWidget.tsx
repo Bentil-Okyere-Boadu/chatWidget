@@ -1,9 +1,10 @@
 import Header from "./Header";
 import LandingPage from "./LandingPage";
-import SectionWrapper from "../../hoc/SectionWrapper";
+// import SectionWrapper from "../../hoc/SectionWrapper";
 import ChatPage from "./ChatPage";
 import { useState } from "react";
 import Pages from "../../enums";
+import './widget.css'
 
 
 const MainWidget = () => {
@@ -28,4 +29,4 @@ const MainWidget = () => {
   );
 };
 
-export default SectionWrapper(MainWidget, 'widget');
+export default MainWidget;
