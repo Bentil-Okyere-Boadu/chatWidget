@@ -9,8 +9,9 @@ const ShadowWidget = () => {
   return (
     <>
       <div
-        className={`opacity-0 bottom-[10%] w-[25rem] right-[3%] fixed ${btn ? "" : "mainWidget"} z-50`}
+        className={`opacity-0 bottom-[10%] w-[20rem] sm:w-[22rem] md:w-[25rem] right-[3%] fixed ${btn ? "" : "mainWidget"} z-50`}
         ref={divRef}
+        id="shadowWidget"
       >
         <MainWidget />
       </div>
